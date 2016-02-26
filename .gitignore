@@ -1,5 +1,7 @@
 *.pyc
 .idea/*
 env/*
+.tox/*
 *.sqlite3
 .DS_Store
+MANIFEST

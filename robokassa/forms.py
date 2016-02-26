@@ -3,6 +3,7 @@
 from hashlib import md5
 from urllib import urlencode
 from django import forms
+from robokassa import conf
 
 from robokassa.conf import LOGIN, PASSWORD1, PASSWORD2
 from robokassa.conf import STRICT_CHECK, FORM_TARGET, EXTRA_PARAMS
@@ -63,6 +64,9 @@ class RobokassaForm(BaseRobokassaForm):
 
     # язык общения с клиентом (en или ru)
     Culture = forms.CharField(max_length=10, required=False)
+    
+    # является ли данная транзакция тестовой
+    IsTest = forms.CharField(max_length=1, initial=str(int(conf.TEST_MODE)))
 
     # Параметр с URL'ом, на который форма должны быть отправлена.
     # Может пригодиться для использования в шаблоне.

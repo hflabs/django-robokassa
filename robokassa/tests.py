@@ -25,7 +25,7 @@ class RobokassaFormTest(TestCase):
                          '%s::5:%s:shpparam1=None:shpparam2=None' % (LOGIN, PASSWORD1))
 
     def testRedirectUrl(self):
-        url = "https://merchant.roboxchange.com/Index.aspx?MrchLogin=test_login&OutSum=100.0&InvId=58&Desc=%D5%EE%EB%EE%E4%E8%EB%FC%ED%E8%EA+%22%C1%E8%F0%FE%F1%E0%22&SignatureValue=0EC23BE40003640B35EC07F6615FFB57&Email=vasia%40example.com&shpparam1=None&shpparam2=None"
+        url = "https://merchant.roboxchange.com/Index.aspx?MrchLogin=test_login&OutSum=100.0&InvId=58&Desc=%D5%EE%EB%EE%E4%E8%EB%FC%ED%E8%EA+%22%C1%E8%F0%FE%F1%E0%22&SignatureValue=0EC23BE40003640B35EC07F6615FFB57&Email=vasia%40example.com&IsTest=0&shpparam1=None&shpparam2=None"
         self.assertEqual(self.form.get_redirect_url(), url)
 
 
